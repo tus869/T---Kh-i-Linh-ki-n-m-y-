@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.6.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #0080ff;
+            color: white;
+        }
+        header .logo img {
+            max-height: 50px;
+        }
+        header p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .menu a:hover {
+            color: #0080ff;
+        }
+        .trangchu12 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ff4400;
+            color: white;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            border-radius: 25px;
+            padding: 5px 10px;
+            border: 2px solid #ff4400;
+        }
+        .search-box input[type="text"] {
+            border: none;
+            outline: none;
+            flex: 1;
+            padding: 5px;
+            font-size: 14px;
+        }
+        .search-box input[type="text"]::placeholder {
+            color: #ccc;
+        }
+        .search-box button {
+            background-color: #ff4400;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .search-box button:hover {
+            background-color: #cc3600;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: #333;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+        }
+        th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+        .total {
+            width: 90%;
+            margin: 20px auto;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: right;
+        }
+        .back-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            text-align: center;
+            text-decoration: none;
+            background-color: #0080ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .back-btn:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    padding: 5px;
+}
+
+.thanh22 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #0080ff;
+    position: relative; 
+    z-index: 2; 
+}
+
+.thanh2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #0080ff;
+    position: relative;  
+    z-index: 2; 
+}
+
+
+.trangchu12 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: #666666;
+    border-bottom: 1px solid #ddd;
+    color: #ffffff;
+    z-index: 1; 
+    position: relative;
+}
+
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+
+.search-box {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #000000;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #ffffff;
+}
+
+.search-box input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 16px;
+}
+/* chay */
+.cv-container {
+    width: 80%;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.products-slider {
+    display: flex;
+    gap: 20px;
+    animation: slide 20s linear infinite;
+    white-space: nowrap;
+}
+
+.product {
+    flex: 0 0 auto;
+    width: 200px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Keyframes cho hiệu ứng trượt */
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/* chay */
+
+
+
+.products {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    margin: 20px 0; 
+}
+   
+.product {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    width: 200px; 
+    height: auto; 
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 10px;
+}
+
+
+.product img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+.anh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.anh img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.scroll-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            transform: translateY(-100%); 
+            transition: transform 0.3s ease; 
+        }
+
+        /* thnhh */
+        .scroll-bar.visible {
+            transform: translateY(0); 
+        }
+
+        /* cuoi */
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+        .footer-section {
+            margin: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+        .footer-section h3 {
+            margin-bottom: 10px;
+        }
+        .footer-section p, .footer-section li {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .footer-section a {
+            color: #00aced;
+            text-decoration: none;
+        }
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+
+ .cart {
+    position: fixed; 
+    top: 20%; 
+    right: 0; 
+    width: 200px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2); 
+    border-left: 1px solid #ddd; 
+    z-index: 1000;
+}
+
+.cart h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.cart h2 i {
+    margin-right: 10px; 
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.cart button a {
+    text-decoration: none; 
+    color: inherit; 
+    display: inline-block;
+    padding: 10px 15px;
+    color: rgb(255, 255, 255); 
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cart button a:hover {
+    background-color: #eb0cff; 
+}
+
+.themsp {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.themsp button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.themsp button:hover {
+    background-color: #45a049;
+}
+.banner {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 10px; 
+    margin: 20px 0; 
+}
+
+.banner img {
+    width: 48%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+.bannerduoi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.asus{
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+}
+.anh1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.anh2{
+    margin-left: 5px;
+    background-color: white;
+    border-radius: 10px;
+}
+.iconyoutube{
+    background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(255, 0, 0);
+background-image: none;
+background-origin: padding-box;
+background-position-x: 0%;
+background-position-y: 0%;
+background-repeat: repeat;
+background-size: auto;
+border-bottom-left-radius :50%;
+border-bottom-right-radius: 50%;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+cursor: pointer;
+display: inline-block;
+font-family: "Font Awesome 5 Brands";
+font-size: 19px;
+font-style: normal;
+font-variant-alternates: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-variant-emoji: normal;
+font-variant-ligatures: normal;
+font-variant-numeric: normal;
+font-variant-position: normal;
+font-weight: 400;
+height: 35.9896px;
+line-height: 36px;
+margin-right: 5px;
+text-align: center;
+text-rendering: auto;
+width :35.9896px;
+word-break :break-word;
+-webkit-font-smoothing: antialiased;
+}
+.iconfacebook{
+    background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(66, 103, 178);
+background-image: none;
+background-origin: padding-box;
+background-position-x: 0%;
+background-position-y: 0%;
+background-repeat: repeat;
+background-size: auto;
+border-bottom-left-radius: 50%;
+border-bottom-right-radius: 50%;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+box-sizing: border-box;
+color:#000000 rgb(255, 255, 255);
+cursor: pointer;
+display: inline-block;
+font-family: "Font Awesome 5 Brands";
+font-size: 19px;
+font-style: normal;
+font-variant-alternates: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-variant-emoji: normal;
+font-variant-ligatures: normal;
+font-variant-numeric: normal;
+font-variant-position: normal;
+font-weight: 400;
+height: 36px;
+line-height: 36px;
+margin-right: 5px;
+text-align: center;
+text-rendering: auto;
+width: 36px;
+word-break: break-word;
+-webkit-font-smoothing: antialiased;
+}
+.iconinsta{
+    background-attachment: scroll;
+background-clip: border-box;
+background-color: rgba(0, 0, 0, 0);
+background-image: linear-gradient(45deg, rgb(240, 148, 51) 0px, rgb(230, 104, 60) 25%, rgb(220, 39, 67) 50%, rgb(204, 35, 102) 75%, rgb(188, 24, 136) 100%);
+background-origin: padding-box;
+background-position-x: 0%;
+background-position-y :0%;
+background-repeat: repeat;
+background-size: auto;
+border-bottom-left-radius: 50%;
+border-bottom-right-radius: 50%;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+cursor: pointer;
+display: inline-block;
+font-family: "Font Awesome 5 Brands";
+font-size: 19px;
+font-style: normal;
+font-variant-alternates: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-variant-emoji: normal;
+font-variant-ligatures: normal
+font-variant-numeric normal;
+font-variant-position: normal;
+font-weight: 400;
+height: 36px;
+line-height: 36px;
+margin-right: 5px;
+text-align: center;
+text-rendering: auto;
+width :36px;
+word-break :break-word;
+-webkit-font-smoothing: antialiased;
+}
+.icontiktok{
+background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(0, 0, 0);
+background-image: none;
+background-origin: padding-box;
+background-position-x: 0%;
+background-position-y: 0%;
+background-repeat: repeat;
+background-size: auto;
+border-bottom-left-radius: 50%;
+border-bottom-right-radius: 50%;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+cursor: pointer;
+display: inline-block;
+font-family: "Font Awesome 5 Brands";
+font-size: 19px;
+font-style: normal;
+font-variant-alternates: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-variant-emoji: normal;
+font-variant-ligatures: normal;
+font-variant-numeric: normal;
+font-variant-position: normal;
+font-weight: 400;
+height:36px;
+line-height: 36px;
+margin-right: 5px;
+text-align: center;
+text-rendering: auto;
+width: 36px;
+word-break: break-word;
+-webkit-font-smoothing: antialiased;
+}
+.search-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tinthong .thongtin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thongtin a {
+    text-decoration: none; 
+    color: inherit; 
+}
+.iconmolet{
+    background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(0, 0, 0);
+background-image: none;
+background-origin: padding-box;
+background-position-x: 0%;
+background-position-y: 0%;
+background-repeat: repeat;
+background-size: auto;
+border-bottom-left-radius: 50%;
+border-bottom-right-radius: 50%;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+cursor: pointer;
+display: inline-block;
+font-family: "Font Awesome 5 Brands";
+font-size: 19px;
+font-style: normal;
+font-variant-alternates: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-variant-emoji: normal;
+font-variant-ligatures: normal;
+font-variant-numeric: normal;
+font-variant-position: normal;
+font-weight: 400;
+height:36px;
+line-height: 36px;
+margin-right: 5px;
+text-align: center;
+text-rendering: auto;
+width: 36px;
+word-break: break-word;
+-webkit-font-smoothing: antialiased;
+}
+.iconxetai{
+    background-attachment: scroll;
+background-clip: border-box;
+background-color: rgb(0, 0, 0);
+background-image: none;
+background-origin: padding-box;
+background-position-x: 0%;
+background-position-y: 0%;
+background-repeat: repeat;
+background-size: auto;
+border-bottom-left-radius: 50%;
+border-bottom-right-radius: 50%;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+box-sizing: border-box;
+color: rgb(255, 255, 255);
+cursor: pointer;
+display: inline-block;
+font-family: "Font Awesome 5 Brands";
+font-size: 19px;
+font-style: normal;
+font-variant-alternates: normal;
+font-variant-caps: normal;
+font-variant-east-asian: normal;
+font-variant-emoji: normal;
+font-variant-ligatures: normal;
+font-variant-numeric: normal;
+font-variant-position: normal;
+font-weight: 400;
+height:36px;
+line-height: 36px;
+margin-right: 5px;
+text-align: center;
+text-rendering: auto;
+width: 36px;
+word-break: break-word;
+-webkit-font-smoothing: antialiased;
+}
+.tinthong{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-btn, .buy-btn {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #0800ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+.back-btn:hover, .buy-btn:hover {
+    background-color: #45a049;
+}
+    </style>
+</head>
+<body>
+    <div class="trangchu12">
+
+        <div class="anh">
+            <a href="./tranghome.html"><img src="./mcpc.jpg" alt="anh"></a>
+        </div>
+        
+        <div class="search-icon">
+            <div class="search-box">
+                <input type="text" placeholder="Tìm kiếm...">
+            </div>
+            <div>
+                <div class="iconfacebook"><i class="icons fab fa-facebook-f"></i></div>
+                <div class="iconyoutube"><i class="icons fab fa-youtube"></i></div>
+                <div class="iconinsta"><i class="fab fa-instagram"></i></div>
+                <div class="icontiktok"><i class="fab fa-tiktok"></i></div>
+            </div>
+        </div>
+
+        <div class="tinthong">
+            <div class="thongtin">
+                <a href="./xaydungcauhinh.html">
+                    <div class="iconmolet"><i class="fa-solid fa-wrench"></i></div>
+                    <span>Xây Dựng Cấu Hình</span>
+                </a>    
+            </div>
+            <div class="thongtin">
+                <a href="./tracuudonhang.html">
+                    <div class="iconxetai"><i class="fa-solid fa-truck"></i></div>
+                    <span>Tra Cứu Đơn Hàng</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- gsdgsrheas -->
+
+
+
+    <h1>Giỏ Hàng</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Sản phẩm</th>
+            <th>Giá (VND)</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody id="cartItems"></tbody>
+</table>
+<div class="total" id="totalPrice">Tổng tiền: 0 VND</div>
+<a href="./tranghome.html" class="back-btn">Quay lại trang sản phẩm</a>
+<a href="javascript:void(0)" class="buy-btn" onclick="generateCode()">Mua ngay</a>
+<div id="orderCode" style="margin-top: 10px; font-weight: bold;"></div>
+
+<script>
+    function loadCart() {
+        
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItems = document.getElementById('cartItems');
+        const totalPrice = document.getElementById('totalPrice');
+        let total = 0;
+
+       
+        cartItems.innerHTML = '';
+
+        
+        cart.forEach((item, index) => {
+            let row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.price.toLocaleString()}</td>
+                <td><button onclick="removeItem(${index})">Xóa</button></td>
+            `;
+            cartItems.appendChild(row);
+            total += item.price;
+        });
+
+        
+        totalPrice.textContent = `Tổng tiền: ${total.toLocaleString()} VND`;
+    }
+
+    function removeItem(index) {
+        
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        
+        cart.splice(index, 1);
+
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        
+        loadCart();
+    }
+
+    
+    loadCart();
+    
+function generateCode() {
+    
+    const code = 'ORDER-' + Math.floor(Math.random() * 1000000);
+    
+
+    document.getElementById('orderCode').textContent = 'Mã đơn hàng: ' + code;
+}
+</script>
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Tổng Đài</h3>
+            <p>Email: Zombilinhs@gmail.com</p>
+            <p>Email: khoibibe27@gmail.com</p>
+            <p>Liên Hệ: 0988910762 - 0944406996</p>
+            <p>Phương thức thanh toán</p>
+            <div class="anh1">
+                <div class="anh2"><img src="./visa.png" alt="" style="height: 40px; width:70px;"></div>
+                <div class="anh2"><img src="./vnpayqr.webp" alt="" style="height: 40px; width: 70px;"></div>
+                <div class="anh2"><img src="./mo mo.png" alt="" style="height: 40px; width: 70px;border-radius: 5px;"></div>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Giới thiệu</h3>
+            <p>Giới thiệu công ty</p>
+            <p>Liên hệ hợp tác kinh doanh</p>
+            <p>Thông tin tuyển dụng</p>
+            <p>Tin công nghệ</p>
+        </div>
+        <div class="footer-section">
+            <h3>Hỗ trợ khách hàng</h3>
+            <p>Tra cứu đơn hàng</p>
+            <p>Hướng dẫn mua hàng trực tuyến</p>
+            <p>Hướng dẫn thanh toán</p>
+            <p>Hướng dẫn mua hàng trả góp</p>
+        </div>
+        <div class="footer-section">
+            <h3>Chính sách chung</h3>
+            <p>Chính sách, quy định chung</p>
+            <p>Chính sách bảo hành</p>
+            <p>Chính sách cho doanh nghiệp</p>
+            <p>Chính sách hàng chính hãng</p>   
+        </div>
+        <div class="footer-section">
+            <h3>Thông tin khuyến mại</h3>
+            <p>Thông tin khuyến mại</p>
+            <p>Sản phẩm khuyến mại</p>
+            <p>Sản phẩm mới</p>
+            <h3>Kết nối với chúng tôi</h3>
+            <div class="iconfacebook"><i class="icons fab fa-facebook-f"></i></div>
+            <div class="iconyoutube"><i class="icons fab fa-youtube"></i></div>
+            <div class="iconinsta"><i class="fab fa-instagram"></i></div>
+            <div class="icontiktok"><i class="fab fa-tiktok"></i></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Trang Bán Hàng. Tú Khôi.</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bài tập lớn</title>
+    <link rel="stylesheet" href="./btlon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    padding: 5px;
+}
+
+.thanh2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #563030;
+    border-bottom: 1px solid #000000;
+}
+.trangchu12 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ff4400;
+    border-bottom: 1px solid #ddd;
+    color: #ffffff;
+}
+nav a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #000000;
+}
+
+button {
+    background-color: #ff4400;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+.menu li{list-style-type: none;}
+    .menu{
+        height: 50px;
+        background-color: #ffffff;
+        border-top: 1px solid rgb(0, 0, 0);
+    }
+    .menu .submenu{
+        display: flex;
+        justify-content: center;
+    }
+    .menu .submenu li a{
+        text-decoration: none;
+        line-height: 50px;
+        display: inline-block;
+        padding-right:50px ;
+        color: rbg(16 16 16);
+    }
+    .menu .submenu li{
+        position: relative;
+    }
+   .menu .submenu .submenucon{
+    position: absolute;
+    width: 190px;
+    /* display: flex;
+    flex-direction: column; */
+    display: none;
+    color:green;
+    }
+    .menu .submenu .li:hover a{
+        color:orangered;
+        transform: scale(1);
+    }
+.menu .submenu li:hover .submenucon{
+    display: block;
+    transition: ease-in 2s;
+    background-color: rgb(0, 0, 0);
+    z-index: 1;
+}
+.menu .submenucon{
+    top:50px;
+}
+.menu .submenucon li{
+    background-color: white;
+    border-bottom:1px solid #ccc ;
+}
+.menu .submenucon a{
+     display: inline-block;
+     text-indent: 10px;
+}
+
+.search-box {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    border: 2px solid #ff4400;
+    border-radius: 25px;
+    padding: 5px;
+    background-color: #ffffff;
+}
+
+.search-box input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 16px;
+}
+.cv-container {
+    width: 50%;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 55px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.products {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+}
+
+.product {
+    flex: 1 1 200px;
+    max-width: 220px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff; 
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+.button{
+    box-shadow:  0 2px 5px #000000;
+    background-color: #ffffff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+}
+.anh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button button:hover {
+    background-color: rgb(255, 0, 208);
+}
+    </style>
+</head>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="#" alt="logo"></div>
+        <p>chuỗi sửa chuyên sâu điện thoại laptop PC - thành viên (logo) </p>
+    </header>
+
+    <div class="thanh2">
+        <nav>
+            <div class="menu">
+                <ul class="submenu">
+                    <li><a href="http://">danh mục</a>
+                        <ul class="submenucon">
+                            <li><a href="">laptop, macbook, surface</a></li>
+                            <li><a href="">laptop gameming, đồ họa</a></li>
+                            <li><a href="">phụ kiện laptop, pc, mobile</a></li>
+                            <li><a href="">pc - chơi game, học tập</a></li>
+                            <li><a href="">pc - đồ họa, thiết kế</a></li>
+                            <li><a href="">pc - văn phòng, làm việc</a></li>
+                            <li><a href="">linh kiện máy tính</a></li>
+                            <li><a href="">tản nhiệt, fan, đèn led</a></li>
+                        </ul>
+                    </li>
+                    <a href="#" style="text-decoration: none;">gọi mua hàng</a>
+                    <a href="#" style="text-decoration: none;">mua hàng online</a>
+                    <a href="#" style="text-decoration: none;">miền bắc</a>
+                    <a href="#" style="text-decoration: none;">miền trung</a>
+                    <a href="#" style="text-decoration: none;">miền nam</a>
+                    <a href="#" style="text-decoration: none;">feedback</a>
+                    <a href="#" style="text-decoration: none;">tìm cửa hàng gần nhất</a>
+                    <a href="#" style="text-decoration: none;">trung tâm dịch vụ</a>
+                    <a href="#" style="text-decoration: none;">khuyến mại</a>
+                    <a href="#" style="text-decoration: none;">tài khoản</a>
+                </ul>
+            </div>
+            
+            
+        </nav>
+    </div>
+
+    <div class="trangchu12">
+
+        <div class="anh">
+            <a href="#"><img src="#" alt="anh"></a>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Tìm kiếm...">
+        </div>
+
+        <div class="thongtin">
+            <a href="#">fb</a>
+            <a href="#">ytb</a>
+            <a href="#">tiktok</a>
+            <a href="#">ig</a>
+            <a href="#">báo</a>
+            <a href="#">xây dựng cấu hình</a>
+            <a href="#">tra cứu đơn hàng</a>
+            <a href="#">giỏ hàng<i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+
+    <div class="cv-container">
+        <div class="product">
+            <p>Linh Kiện Máy Tính</p>
+        </div>
+        <div class="product">
+            <img src="#" alt="sp1">
+            <h2>điện thoại ausus Rog phone 7 pro</h2>
+            <a href="#"></a>
+        </div>
+        <div class="product">
+            <img src="#" alt="sp1">
+            <h2>điện thoại ausus Rog phone 7 pro</h2>
+            <a href="#"></a>
+        </div>
+        <div class="product">
+            <img src="#" alt="sp2">
+            <h2>điện thoại ausus Rog phone 7 pro</h2>
+            <a href="#"></a>
+        </div>
+        <div class="product">
+            <img src="#" alt="sp3">
+            <h2>điện thoại ausus Rog phone 7 pro</h2>
+            <a href="#"></a>
+        </div>
+        <div class="product">
+            <img src="#" alt="sp4">
+            <h2>điện thoại ausus Rog phone 7 pro</h2>
+            <a href="#"></a>
+        </div>
+        <div class="product">
+            <img src="#" alt="sp5">
+            <h2>điện thoại ausus Rog phone 7 pro</h2>
+            <a href="#"></a>
+        </div>
+        <div class="product">
+            <img src="#" alt="sp6">
+            <h2>điện thoại ausus Rog phone 7 pro</h2>
+            <a href="#"></a>
+        </div>
+        <div class="product">
+            <img src="#" alt="sp7">
+            <h2>điện thoại ausus Rog phone 7 pro</h2>
+            <a href="#"></a>
+        </div>
+        <div class="product">
+            <img src="#" alt="sp8">
+            <h2>điện thoại ausus Rog phone 7 pro</h2>
+            <a href="#"></a>
+        </div>
+    </div>
+
+
+    <div class="banner">
+        <img src="#" alt="banner"> 
+        <img src="#" alt="banner2">
+    </div>
+
+    <h4>linh kiện máy tính </h4>
+
+   <div class="anh">
+    <div class="button">
+        <button><img src="#" alt="ảnh1"></button>
+    </div>
+    <div class="button">
+        <button><img src="#" alt="ảnh2"></button>
+    </div>
+    <div class="button">
+        <button><img src="#" alt="ảnh3"></button>
+    </div>
+    <div class="button">
+        <button><img src="#" alt="ảnh4"></button>
+    </div>
+    <div class="button">
+        <button><img src="#" alt="ảnh5"></button>
+    </div>
+    <div class="button">
+        <button><img src="#" alt="ảnh6"></button>
+    </div>
+    <div class="button">
+        <button><img src="#" alt="ảnh7"></button>
+    </div>
+   </div>
+   
+   <div class="spham">
+    <div class="bannerduoi"><img src="./bannerduoi.png" alt="banner"></div>
+
+    <div class="product">
+        <img src="#" alt="sp1">
+        <h2>điện thoại ausus Rog phone 7 pro</h2>
+        <a href="#"></a>
+        <button></button>
+   </div>
+   <div class="product">
+    <img src="#" alt="sp2">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp3">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp4">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp5">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp6">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp7">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp8">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button><img src="#" alt="sp8"></button>
+</div>
+
+<div class="themsp">
+    <button>thêm CPU bộ sử lý</button>
+</div>
+
+<div class="bannerduoi"><img src="./bannerduoi1.png" alt="banner1"></div>
+    
+<div class="product">
+    <img src="#" alt="sp1">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp2">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp3">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp4">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp5">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp6">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp7">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp8">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button><img src="#" alt="sp8"></button>
+</div>
+
+<div class="themsp">
+    <button>thêm CPU bộ sử lý</button>
+</div>
+
+<div class="spham">
+    <div class="bannerduoi"><img src="./bannerduoi.png" alt="banner"></div>
+
+    <div class="product">
+        <img src="#" alt="sp1">
+        <h2>điện thoại ausus Rog phone 7 pro</h2>
+        <a href="#"></a>
+        <button></button>
+   </div>
+   <div class="product">
+    <img src="#" alt="sp2">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp3">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp4">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp5">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp6">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp7">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp8">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button><img src="#" alt="sp8"></button>
+</div>
+
+<div class="themsp">
+    <button>thêm CPU bộ sử lý</button>
+</div>
+
+<div class="bannerduoi"><img src="./bannerduoi1.png" alt="banner1"></div>
+    
+<div class="product">
+    <img src="#" alt="sp1">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp2">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp3">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp4">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp5">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp6">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp7">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp8">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button><img src="#" alt="sp8"></button>
+</div>
+
+<div class="themsp">
+    <button>thêm CPU bộ sử lý</button>
+</div>
+
+
+<div class="spham">
+    <div class="bannerduoi"><img src="./bannerduoi.png" alt="banner"></div>
+
+    <div class="product">
+        <img src="#" alt="sp1">
+        <h2>điện thoại ausus Rog phone 7 pro</h2>
+        <a href="#"></a>
+        <button></button>
+   </div>
+   <div class="product">
+    <img src="#" alt="sp2">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp3">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp4">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp5">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp6">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp7">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp8">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button><img src="#" alt="sp8"></button>
+</div>
+
+<div class="themsp">
+    <button>thêm CPU bộ sử lý</button>
+</div>
+
+<div class="bannerduoi"><img src="./bannerduoi1.png" alt="banner1"></div>
+    
+<div class="product">
+    <img src="#" alt="sp1">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp2">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp3">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp4">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp5">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp6">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp7">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp8">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button><img src="#" alt="sp8"></button>
+</div>
+
+<div class="themsp">
+    <button>thêm CPU bộ sử lý</button>
+</div>
+
+<div class="spham">
+    <div class="bannerduoi"><img src="./bannerduoi.png" alt="banner"></div>
+
+    <div class="product">
+        <img src="#" alt="sp1">
+        <h2>điện thoại ausus Rog phone 7 pro</h2>
+        <a href="#"></a>
+        <button></button>
+   </div>
+   <div class="product">
+    <img src="#" alt="sp2">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp3">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp4">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp5">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp6">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp7">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+    <img src="#" alt="sp8">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button><img src="#" alt="sp8"></button>
+</div>
+
+<div class="themsp">
+    <button>thêm CPU bộ sử lý</button>
+</div>
+
+<div class="bannerduoi"><img src="./bannerduoi1.png" alt="banner1"></div>
+    
+<div class="product">
+    <img src="#" alt="sp1">
+    <h2>điện thoại ausus Rog phone 7 pro</h2>
+    <a href="#"></a>
+    <button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp2">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp3">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp4">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp5">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp6">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp7">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button></button>
+</div>
+<div class="product">
+<img src="#" alt="sp8">
+<h2>điện thoại ausus Rog phone 7 pro</h2>
+<a href="#"></a>
+<button><img src="#" alt="sp8"></button>
+</div>
+
+<div class="themsp">
+    <button>thêm CPU bộ sử lý</button>
+</div>
+
+</body>
+</html>
